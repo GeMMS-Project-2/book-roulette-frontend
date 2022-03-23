@@ -87,7 +87,32 @@ h2 {
 
 #roulette-img {
 	width: 100%;
+	/* max-width: 400px; */
+	height: auto;
 	height: auto;
 	position: relative;
 	z-index: -99;
+}
+
+.icon {
+	height: 30px;
+	width: 30px;
+	color: black;
+}
+
+#button-nav {
+	border: none;
+	background-color: white;
+}
+
+#button-nav:hover {
+	border: 2px solid black;
+}
+
+/* .icon:hover {
+	scale: 2rem;
+} */
+
+nav {
+	position: absolute;
 }
