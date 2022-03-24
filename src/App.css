@@ -96,12 +96,13 @@ h2 {
 }
 
 .nav {
-	display: block;
+	display: none;
 	position: absolute;
 	width: 135px;
 }
 
 .nav.active {
+	display: block;
 	background-color: white;
 	padding: 8px;
 	padding-left: 8px;
