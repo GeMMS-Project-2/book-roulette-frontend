@@ -1,24 +1,24 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import React, { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
 
 function BookList(props) {
 	//Fetch the data to populate all the books or popluate books by genre passed through the params.
-	const [books, setBooks] = useState([]);
-	const { genre } = useParams();
+	// const [books, setBooks] = useState([]);
+	// const { genre } = useParams();
 
-	useEffect(() => {
-		fetch('http://localhost:8000/books')
-			.then((res) => {
-				res.json();
-			})
-			.then((data) => {
-				setBooks(data);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	}, []);
+	// useEffect(() => {
+	// 	fetch('http://localhost:8000/books')
+	// 		.then((res) => {
+	// 			res.json();
+	// 		})
+	// 		.then((data) => {
+	// 			setBooks(data);
+	// 		})
+	// 		.catch((error) => {
+	// 			console.log(error);
+	// 		});
+	// }, []);
 
 	return (
 		<div>
