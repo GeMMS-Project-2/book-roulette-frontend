@@ -45,8 +45,8 @@ function App() {
 			<Nav classState={classState} />
 			<div>
 				<Routes>
-					<Route path='/books' element={<BookList />} />
-					<Route path='/books/:genre' element={<BookList />} />
+					<Route path='/list' element={<BookList />} />
+					<Route path='/books/list/:genre' element={<BookList />} />
 					<Route path='/add-book' element={<Form />} />
 					<Route path='/:genre/:id' element={<Book />} />
 					<Route path='/' element={<Home />} />
