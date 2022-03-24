@@ -7,20 +7,29 @@ import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 function App() {
-	// const navigate = useNavigate();
+	const [isActive, setIsActive] = useState(true);
+	const [classState, setClassState] = useState('inactive');
 
-	// function handleClick() {
-	// 	navigate('/');
-	// }
-	const iconBook = <FontAwesomeIcon icon={faBook} />;
+	function handleClick() {
+		setIsActive(!isActive);
+
+		if (isActive) {
+			setClassState('active');
+		} else {
+			setClassState('inactive');
+		}
+
+		return classState;
+	}
 
 	return (
 		<>
 			<header id='page-top'>
 				<div id='button-nav-container'>
-					<button id='button-nav'>
+					<button id='button-nav' onClick={handleClick}>
 						<FontAwesomeIcon icon={faBook} className='icon'></FontAwesomeIcon>
 					</button>
 				</div>
@@ -33,11 +42,11 @@ function App() {
 					</div>
 				</div>
 			</header>
-			<Nav />
+			<Nav classState={classState} />
 			<div>
 				<Routes>
 					<Route path='/list' element={<BookList />} />
-					<Route path='/books/:genre' element={<BookList />} />
+					<Route path='/books/list/:genre' element={<BookList />} />
 					<Route path='/add-book' element={<Form />} />
 					<Route path='/:id' element={<Book />} />
 					<Route path='/' element={<Home />} />

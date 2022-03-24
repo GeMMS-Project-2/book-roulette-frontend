@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Nav(props) {
+function Nav({ classState }) {
+	useEffect(() => {
+		console.log('hello');
+	}, [classState]);
+
 	return (
-		<div id='nav-container'>
-			<nav>
-				<ul>
+		<>
+			<nav className={`${classState}` + ' nav'} id='nav-genres'>
+				<ul className='nav-ul'>
 					<Link to='/books'>
 						<li className='nav-link'>All Books</li>
 					</Link>
@@ -29,7 +33,7 @@ function Nav(props) {
 					<button id='add-book'>Submit Your Favorite Book</button>
 				</Link>
 			</nav>
-		</div>
+		</>
 	);
 }
 
