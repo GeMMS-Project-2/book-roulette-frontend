@@ -7,14 +7,19 @@ import axios from "axios";
 
 
 function Book() {
-    const { id } = useParams();
+    const { id, genre } = useParams();
     const navigate = useNavigate();
     const [book, setBook] = useState(null);
     const [modal, setModal] = useState(false);
 
-   
+	// http://localhost:3001/Mystery
 	useEffect(() => {
-		fetch(`https://book-roulette.herokuapp.com/books/${genre}/${id}`)
+		// fetch(`https://book-roulette.herokuapp.com/books/${genre}/${id}`)
+		// fetch(`https://book-roulette.herokuapp.com/books/genre/${genre}/random`)
+		
+		fetch(`https://book-roulette.herokuapp.com/books/genre/${genre}/random`)
+		// fetch(`http://localhost:8000/books/genre/${genre}/random`)
+
 			// .get(`https://book-roulette.herokuapp.com/books/${genre}/${id}`)
 			.then((res) => res.json())
             .then(data => {
@@ -40,10 +45,23 @@ function Book() {
         setBook({ ...book, [event.target.id]: event.target.value });
     });
 
-    const handleSubmit = async (event) => {
+    // const handleSubmit = async (event) => {
+	// 	event.preventDefault();
+	// 	try {
+	// 		const res = await axios.put(`https://book-roulette.herokuapp.com/books/${book._id}`, book);
+	// 		if (res.status === 200) {
+	// 			setModal(false);
+	// 		}
+	// 	} catch (err) {
+	// 		console.log(err)
+	// 	}
+	// 	navigate('/');
+	// };
+	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const res = await axios.put(`https://book-roulette.herokuapp.com/books/${id}`, book);
+			const res = await axios.put(`https://book-roulette.herokuapp.com/books/${book._id}`, book);
+			console.log(book);
 			if (res.status === 200) {
 				setModal(false);
 			}
@@ -53,11 +71,14 @@ function Book() {
 		navigate('/');
 	};
 
+
+
+
 	const handleDelete = async () => {
 		const confirm = window.confirm("Are you sure you want to delete?");
 		if (confirm) {
 			try {
-				const res = await axios.delete(`https://book-roulette.herokuapp.com/books/${id}`);
+				const res = await axios.delete(`https://book-roulette.herokuapp.com/books/${book._id}`);
 				if (res.status === 200) {
 					navigate('/');
 				}
@@ -74,27 +95,27 @@ function Book() {
                     <h2>Edit Book</h2>
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor="edit-title">Title</label>
-                            <input onChange={handleChange} id="edit-title" value={book.title} />
+                            <label htmlFor="title">Title</label>
+                            <input  onChange={handleChange} id="title" value={book.title} />
                         </div>
                         <div>
-                            <label htmlFor="edit-author">Author</label>
-                            <input onChange={handleChange} id="edit-author" value={book.author} />
+                            <label htmlFor="author">Author</label>
+                            <input onChange={handleChange} id="author" value={book.author} />
                         </div>
                         <div>
-                            <label htmlFor="edit-img">Book Cover URL</label>
-                            <input onChange={handleChange} id="edit-img" value={book.img} />
+                            <label htmlFor="img">Book Cover URL</label>
+                            <input onChange={handleChange} id="img" value={book.img} />
                         </div>
                         <div>
-                            <label htmlFor="edit-genre">Genre</label>
-                            <input onChange={handleChange} id="edit-genre" value={book.genre} />
+                            <label htmlFor="genre">Genre</label>
+                            <input onChange={handleChange} id="genre" value={book.genre} />
                         </div>
                         <div>
-                            <label htmlFor="edit-description">Synopsis</label>
-                            <input onChange={handleChange} id="edit-description" value={book.description} />
+                            <label htmlFor="description">Synopsis</label>
+                            <input onChange={handleChange} id="description" value={book.description} />
                         </div>
                         <div>
-                            <label htmlFor="edit-filmAdaptation">Adapted To Film?</label>
+                            <label htmlFor="filmAdaptation">Adapted To Film?</label>
                             <input 
                                 type="checkbox"
                                 onChange={() => {
@@ -103,7 +124,7 @@ function Book() {
                                         filmAdaptation: !book.filmAdaptation,
                                     });
                                 }} 
-                                id="edit-filmAdaptation" 
+                                id="filmAdaptation" 
                                 value={book.filmAdaptation} 
                                 checked={book.filmAdaptation}
                             />
