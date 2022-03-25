@@ -314,6 +314,7 @@
     font-family: "Special Elite", cursive;
     border: .2rem solid black;
     transform: rotate(-10deg);
+    cursor: pointer;
 }
 
 .addBookButton:active {
