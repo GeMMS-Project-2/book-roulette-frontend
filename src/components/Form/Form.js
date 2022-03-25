@@ -20,9 +20,11 @@ function Form() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post("https://book-roulette.herokuapp.com/", book)
+        console.log(book)
+        axios.post("https://book-roulette.herokuapp.com/books", book)
         .then (res => {
-            if (res.status === 201) {
+            console.log(res);
+            if (res.status === 200) {
                 navigate('/');
             } else {
                 alert(
