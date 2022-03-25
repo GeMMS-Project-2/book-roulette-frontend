@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Nav({ classState }) {
-	useEffect(() => {
-		console.log('hello');
-	}, [classState]);
-
 	return (
 		<>
 			<nav className={`${classState}` + ' nav'} id='nav-genres'>
@@ -23,10 +19,10 @@ function Nav({ classState }) {
 						<li className='nav-link'>Romance</li>
 					</Link>
 					<Link to='/books/:genre'>
-						<li className='nav-link'>Fiction</li>
+						<li className='nav-link'>Education</li>
 					</Link>
 					<Link to='/books/:genre'>
-						<li className='nav-link'>Non-Fiction</li>
+						<li className='nav-link'>Thriller</li>
 					</Link>
 				</ul>
 				<Link to='/add-book'>
