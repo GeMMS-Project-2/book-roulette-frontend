@@ -43,7 +43,7 @@ function Form() {
           <p className="addBook">Add A Book</p>
           <p className="library">To Library</p>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="addForm">
           <div className="addDetails-container">
             <div className="author-container">
               <div className="author-label">
