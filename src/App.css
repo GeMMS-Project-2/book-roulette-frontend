@@ -140,7 +140,20 @@ a {
 	text-decoration: none;
 }
 
-/* @keyframes navSlideDown {
-	0% {
+.romance-container {
+	height: 900px;
+}
+
+@media only screen and (min-width: 1200px) {
+	#roulette-container {
+		display: flex;
+		max-width: 900px;
+
+		margin: 0 auto;
 	}
-} */
+
+	.drop-down {
+		font-size: 20px;
+		width: 200px;
+	}
+}
