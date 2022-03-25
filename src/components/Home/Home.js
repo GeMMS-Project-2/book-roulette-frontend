@@ -28,8 +28,8 @@ export default function Home({ genre }) {
 						<option value='Romance' className='option'>
 							Romance
 						</option>
-						<option value='Educational' className='option'>
-							Educational
+						<option value='Education' className='option'>
+							Education
 						</option>
 						<option value='Mystery' className='option'>
 							Mystery
