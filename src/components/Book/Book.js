@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -22,9 +23,11 @@ function Book() {
             .catch(err => console.log(err));
     }, []);
 
-    if (!book) {
-        return <h1>Loading...</h1>;
-    }
+
+  if (!book) {
+    return <h1>Loading...</h1>;
+  }
+
 
     const moreDetails = () => {
         setShowMore(!showMore);
@@ -43,9 +46,11 @@ function Book() {
         setModal(false);
     }
 
-    const handleChange = (event => {
-        setBook({ ...book, [event.target.id]: event.target.value });
-    });
+
+  const handleChange = (event) => {
+    setBook({ ...book, [event.target.id]: event.target.value });
+  };
+
 
     const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -193,6 +198,9 @@ function Book() {
             )}
         </section >
     );
+
+  
+
 }
 
 export default Book;
