@@ -1,4 +1,3 @@
-
 import './Home.css';
 import { useState } from 'react';
 import Book from '../Book/Book';
@@ -52,3 +51,4 @@ export default function Home({ genre }) {
 			</div>
 		</main>
 	);
+}
