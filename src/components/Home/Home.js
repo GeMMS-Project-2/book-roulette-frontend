@@ -52,3 +52,5 @@ export default function Home({ genre }) {
 			</div>
 		</main>
 	);
+  }
+  
