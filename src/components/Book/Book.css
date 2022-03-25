@@ -63,6 +63,7 @@
 .buttons-bar {
     padding: 5%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .moreButton-container {
@@ -76,6 +77,10 @@
     border-radius: 5px;
     padding: 5%;
     font-family: 'Special Elite', cursive;
+}
+
+.moreButton-container button:hover {
+    cursor: pointer;
 }
 
 .editButton-container {
@@ -157,6 +162,10 @@ form {
     padding: 2%;
 }
 
+.filmCheck input {
+    transform: scale(2);
+}
+
 .editButtons {
     display: flex;
     justify-content: space-evenly;
@@ -173,3 +182,38 @@ form {
     cursor: pointer;
 }
 
+
+/* === Media Queries === */
+@media (min-width: 540px) {
+    .allDetails-container {
+        display: flex;
+        justify-content: center;
+    }
+    .bookDetails-container {
+        width: 500px;
+        margin: 2%;
+    }
+    .moveUpAndDown {
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 300px) {
+    .bookDetails-container {
+        width: 90vw;
+    }
+    .buttons-bar {
+        display: block;
+    }
+    .moreButton-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .editButton-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 2%;
+    }
+}
