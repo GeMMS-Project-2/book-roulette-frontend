@@ -83,29 +83,52 @@ function Book() {
                         <h2>Edit Book</h2>
                     </div>
                     <form onSubmit={handleSubmit}>
-                        <div>
-                            <label htmlFor="edit-title">Title</label>
-                            <input onChange={handleChange} id="edit-title" value={book.title} />
+                        <div className="edit-container">
+                            <div className="edit-label">
+                                <label htmlFor="edit-title">Title</label>
+                            </div>
+                            <div className="edit-input">
+                                <input onChange={handleChange} id="edit-title" value={book.title} />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="edit-author">Author</label>
-                            <input onChange={handleChange} id="edit-author" value={book.author} />
+                        <div className="edit-container">
+                            <div className="edit-label">
+                                <label htmlFor="edit-author">Author</label>
+                            </div>
+                            <div className="edit-input">
+                                <input onChange={handleChange} id="edit-author" value={book.author} />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="edit-img">Book Cover URL</label>
-                            <input onChange={handleChange} id="edit-img" value={book.img} />
+                        <div className="edit-container">
+                            <div className="edit-label">
+                                <label htmlFor="edit-img">Book Cover URL</label>
+                            </div>
+                            <div className="edit-input">
+                                <input onChange={handleChange} id="edit-img" value={book.img} />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="edit-genre">Genre</label>
-                            <input onChange={handleChange} id="edit-genre" value={book.genre} />
+                        <div className="edit-container">
+                            <div className="edit-label">
+                                <label htmlFor="edit-genre">Genre</label>
+                            </div>
+                            <div className="edit-input">
+                                <input onChange={handleChange} id="edit-genre" value={book.genre} />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="edit-description">Synopsis</label>
-                            <input onChange={handleChange} id="edit-description" value={book.description} />
+                        <div className="edit-container">
+                            <div className="edit-label">
+                                <label htmlFor="edit-description">Synopsis</label>
+                            </div>
+                            <div className="edit-input">
+                                <input onChange={handleChange} id="edit-description" value={book.description} />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="edit-filmAdaptation">Adapted To Film?</label>
-                            <input 
+                        <div className="edit-container">
+                            <div className="edit-label">
+                                <label htmlFor="edit-filmAdaptation">Adapted To Film?</label>
+                            </div>
+                            <div className="edit-input">
+                                <input 
                                 type="checkbox"
                                 onChange={() => {
                                     setBook({
@@ -117,9 +140,12 @@ function Book() {
                                 value={book.filmAdaptation} 
                                 checked={book.filmAdaptation}
                             />
+                            </div>
                         </div>
-                        <button type="submit">Submit Changes</button>
-                        <button type="button" onClick={closeModal}>Close</button>
+                        <div className="editButtons">
+                            <button type="submit">Submit Changes</button>
+                            <button type="button" onClick={closeModal}>Close</button>
+                        </div>
                     </form>
                 </div>
             ) : (
