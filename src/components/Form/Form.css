@@ -1,3 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 * {
     box-sizing: border-box;
+}
+
+.form-container {
+    margin: 2rem 2rem 2rem 2rem;
+    padding: 1.5em 1em;
+    border: solid .1em black;
+    border-radius: 5px;
+    font-family: 'Special Elite', cursive;
+    background-image: url("https://images.unsplash.com/photo-1615800098746-73af8261e3df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3075&q=80");
+    box-shadow: 5px 5px 5px 2px rgb(99, 98, 98);
+}
+
+/* === Top Bar === */
+.card-title {
+    border-bottom: solid .1em black;
+}
+
+.addBook {
+    margin: 0 0 .3em 0;
+    padding: 0;
+    font-size: 1.5em;
+    text-align: center;
+    transform: scale(1, .75);
+}
+
+.library {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: .8em;
+    transform: scale(1, .85);
+}
+
+/* === Main Content === */
+.addDetails-container {
+    padding: 0;
+    margin: 0.1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Author Input === */
+.author-container {
+    margin: 0;
+    display: flex;
+}
+
+.author-label {
+    width: 9em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1em solid black;
+}
+
+.author-label label{
+    font-size: 1rem;
+    transform: scale(1, .85);
+}
+
+.author-input {
+    padding: 0 0 0 1em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1em solid black;
+}
+
+#author {
+    background: transparent;
+    border: none;
+    font-style: italic;
+}
+
+
+/* === Title === */
+.title-container {
+    margin: 0;
+    display: flex;
+}
+
+.title-label {
+    width: 9em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1em solid black;
+}
+
+.title-label label {
+    font-size: 1rem;
+    transform: scale(1, .85);
+}
+
+.title-input {
+    padding: 0 0 0 1em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1em solid black;
+}
+
+#title {
+    background: transparent;
+    border: none;
+    font-style: italic;
+}
+
+
+/* === Genre === */
+.genre-container {
+    margin: 0;
+    display: flex;
+}
+
+.genre-label {
+    width: 9em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1em solid black;
+}
+
+.genre-label label {
+    font-size: 1rem;
+    transform: scale(1, .85);
+}
+
+.genre-input {
+    padding: 0 0 0 1em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1em solid black;
+}
+
+#genre {
+    background: transparent;
+    border: none;
+    font-style: italic;
+}
+
+
+/* === Non-Required Section Labels === */
+.notRequired-container {
+    margin: .3rem 0 0 0;
+    height: 2.4rem;
+    display: flex;
+}
+
+.notRequired-label {
+    width: 6.3em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: .3em double black;
+    border-right: .1em solid black;
+    border-bottom: .1em solid black;
+}
+
+.notRequired-label p {
+    font-size: 1rem;
+    transform: scale(1, .85);
+}
+
+.notRequired-input {
+    padding: 0 0 0 1em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1em solid black;
+    border-top: .3em double black;
+}
+
+.notRequired-input p {
+    font-size: 1rem;
+    transform: scale(1, .85);
+}
+
+
+/* === Book Cover Img === */
+.img-container {
+    margin: 0;
+    display: flex;
+}
+
+.img-label {
+    font-size: .7em;
+    width: 9em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: .1rem solid black;
+    border-right: .1rem solid black;
+    border-bottom: .1rem solid black;
+}
+
+.img-label label {
+    transform: scale(1, .85);
+}
+
+.img-input {
+    padding: 0 0 0 1em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1rem solid black;
+    border-top: .1rem solid black;
+}
+
+#img {
+    background: transparent;
+    border: none;
+    font-style: italic;
+}
+
+
+/* === Film Adaptation === */
+.film-container {
+    margin: 0;
+    display: flex;
+}
+
+.film-label {
+    font-size: .7em;
+    width: 9em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: .1rem solid black;
+    border-right: .1rem solid black;
+    border-bottom: .1rem solid black;
+}
+
+.film-label label {
+    transform: scale(1, .85);
+}
+
+.film-input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: .1rem solid black;
+    border-top: .1rem solid black;
+}
+
+#filmAdaptation {
+    background: transparent;
+    border: none;
+    font-style: italic;
+}
+
+
+/* === Synopsis === */
+.synopsis-container {
+    margin: 0;
+    display: flex;
+}
+
+.synopsis-label {
+    font-size: .7em;
+    width: 9em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: .1rem solid black;
+    border-right: .1rem solid black;
+    border-bottom: .1rem solid black;
+}
+
+.synoposis-label label {
+    transform: scale(1, .85);
+}
+
+.synopsis-input {
+    padding: 0 0 0 1em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .1rem solid black;
+    border-top: .1rem solid black;
+}
+
+#description {
+    background: transparent;
+    border: none;
+    font-style: italic;
+}
+
+
+/* === Submit Button === */
+.addBookButton-container {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addBookButton {
+    padding: 2rem;
+    font-size: 1.5rem;
+    background: transparent;
+    font-family: "Special Elite", cursive;
+    border: .2rem solid black;
+    transform: rotate(-10deg);
+    cursor: pointer;
+}
+
+.addBookButton:active {
+    border: .2rem solid red;
+    color: red;
+}
+
+
+/* === Media Queries === */
+@media (min-width: 600px) {
+    .form-container {
+        width: 500px;
+    }
+    .master-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 350px) {
+    .form-container {
+        width: 90vw;
+    }
+    .master-container {
+        display: flex;
+        justify-content: center;
+    }
+    .addBookButton-container {
+        width: auto;
+    }
 }

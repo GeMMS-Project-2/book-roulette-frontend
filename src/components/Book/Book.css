@@ -1,3 +1,175 @@
 * {
     box-sizing: border-box;
 }
+
+.bookDetails-container {
+    margin: 10% 3%;
+    padding: 0;
+    font-family: 'Special Elite', cursive;
+    color: white;
+}
+
+.details-container {
+    margin: -30% 0 0 0;
+    display: flex;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    transition: all 2s ease-in-out;
+}
+
+.moveUpAndDown {
+    transform: translateY(-30%);
+}
+
+.book-img {
+    display: flex;
+    justify-content: center;
+}
+
+.book-img img {
+    margin: 0;
+    padding: 0;
+    width: 89%;
+    border-radius: 30px;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+}
+
+.details-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.top-details {
+    padding: 8% 3% 0;
+    line-height: 140%;
+}
+
+.top-details h2 {
+    margin: 0% 3% 0% 3%;
+    text-align: left;
+}
+
+.top-details h3, p {
+    margin: 0 3%;
+}
+
+.buttons-bar {
+    padding: 5%;
+    display: flex;
+}
+
+.moreButton-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.moreButton-container button {
+    border: none;
+    border-radius: 5px;
+    padding: 5%;
+    font-family: 'Special Elite', cursive;
+}
+
+.editButton-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10%;
+}
+
+.editButton-container button {
+    font-family: 'Special Elite', cursive;
+    border: none;
+    border-radius: 5px;
+    padding: 5%;
+}
+
+.editButton-container button:hover {
+    cursor: pointer;
+}
+
+.moreDetails {
+    padding: 0 5%;
+    line-height: 1.5rem;
+}
+
+.filmDetail {
+    padding: 5% 0;
+    font-size: 1.5rem;
+}
+
+.filmDetail span {
+    font-weight: bold;
+}
+
+/* === Modal === */
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5% 0;
+    border: 2px solid black;
+}
+
+.edit-title {
+    background-color: black;
+    padding: 3%;
+    width: 50%;
+}
+
+form {
+    width: 90%;
+}
+
+.edit-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 5% 0;
+}
+
+.edit-label {
+    background-color: black;
+    width: 50%;
+    padding: 1.2%;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-input input {
+    width: 90%;
+    padding: 2%;
+}
+
+.editButtons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.editButtons button {
+    border: .1rem solid black;
+    padding: 5%;
+    font-family: 'Special Elite', cursive;
+    background: transparent;
+}
+
+.editButtons button:hover {
+    cursor: pointer;
+}
+

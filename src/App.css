@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap%27');
+
+* {
+	box-sizing: border-box;
+	padding: 2px;
+}
+body {
+	background-color: bisque;
+}
+#page-top {
+	display: flex;
+	flex-direction: row;
+	height: 5vh;
+	align-items: center;
+	padding: 0;
+	border-bottom: 2px solid black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#button-nav-container {
+	display: flex;
+	align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#title-nav-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#page-title {
+	font-size: 1.5rem;
+	color: black;
 }
 
-.App-link {
-  color: #61dafb;
+#button-nav {
+	width: 30px;
+	height: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#title-nav {
+	display: flex;
+	align-items: flex-start;
+}
+
+#add-book {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.6rem;
+	height: 40px;
+	width: 80px;
+}
+
+#main-content {
+	display: flex;
+	flex-direction: row;
+}
+
+#roulette-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 100%;
+	padding: 0 20px;
+}
+
+h2 {
+	text-align: center;
+	margin: 0;
+}
+
+#roulette-img {
+	width: 100%;
+	/* max-width: 400px; */
+	height: auto;
+	height: auto;
+	position: relative;
+	z-index: -99;
+}
+
+.icon {
+	height: 25px;
+	background-size: cover;
+	color: black;
+}
+
+#button-nav {
+	border: none;
+	background-color: bisque;
+	margin-bottom: 5px;
+}
+
+.icon:hover {
+	border: 4px solid rgba(112, 74, 23, 0.541);
+}
+
+.nav {
+	display: none;
+	position: absolute;
+	width: 135px;
+}
+
+.nav.active {
+	display: block;
+	background-color: white;
+	padding: 8px;
+	padding-left: 8px;
+	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav button {
+	margin-left: 10px;
+}
+
+.nav-ul {
+	display: flex;
+	padding: 0;
+	margin-top: 20px;
+	gap: 5px;
+	flex-direction: column;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+nav.active ul {
+	width: 100%;
+}
+
+nav ul li {
+	list-style: none;
+	color: black;
+}
+
+.nav-link:hover {
+	font-size: 1.2rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+.romance-container {
+	height: 900px;
+}
+
+@media only screen and (min-width: 1200px) {
+	#roulette-container {
+		display: flex;
+		max-width: 900px;
+
+		margin: 0 auto;
+	}
+
+	.drop-down {
+		font-size: 20px;
+		width: 200px;
+	}
 }
