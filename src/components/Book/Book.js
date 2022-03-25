@@ -1,9 +1,8 @@
-
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from "axios";
+import "./Book.css";
 
 
 function Book() {
@@ -11,6 +10,9 @@ function Book() {
     const navigate = useNavigate();
     const [book, setBook] = useState(null);
     const [modal, setModal] = useState(false);
+    const [showMore, setShowMore] = useState(false);
+    const [hidden, setHidden] = useState(true);
+    const [active, setActive] = useState("")
 
     useEffect(() => {
         fetch(`https://book-roulette.herokuapp.com/books/${id}`)
@@ -23,6 +25,16 @@ function Book() {
 
     if (!book) {
         return <h1>Loading...</h1>;
+    }
+
+    const moreDetails = () => {
+        setShowMore(!showMore);
+        setHidden(!hidden);
+        if (hidden) {
+            setActive("moveUpAndDown")
+        } else {
+            setActive("")
+        }
     }
 
     const editBookPage = () => {
@@ -64,10 +76,12 @@ function Book() {
 	};
 
     return (
-        <section>
+        <section className="bookDetails-container">
             {modal ? (
-                <div>
-                    <h2>Edit Book</h2>
+                <div className="modal-container">
+                    <div className="edit-title">
+                        <h2>Edit Book</h2>
+                    </div>
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="edit-title">Title</label>
@@ -110,30 +124,45 @@ function Book() {
                 </div>
             ) : (
                 <>
-                    <h2>{book.title}</h2>
-                    <h3>By: {book.author}</h3>
-                    <img src={book.img} alt={book.title} />
-                    <div>
-                        <button onClick={editBookPage}>
-                            Edit
-                        </button>
-                        <button onClick={handleDelete}>
-                            Delete
-                        </button>
+                    <div className="book-img">
+                        <img src={book.img} alt={book.title} />
                     </div>
-                    <div>
-                        <button>
-                            More Details:
-                        </button>
-                        <p>
-                            Genre: {book.genre}
-                        </p>
-                        <p>
-                            {book.description}
-                        </p>
-                        <p>
-                            Adapted to Film: {book.filmAdaptatioin ? "Yes" : "No"}
-                        </p>
+                    <div className={`details-container ${active}`}>
+                        <div className="details-child">
+                            <div className="top-details">
+                                <h2>{book.title}</h2>
+                                <h3>By: {book.author}</h3>
+                                <p>Genre: {book.genre}</p>
+                            </div>
+                            <div className="bottom-details">
+                                <div className="buttons-bar">
+                                    <div className="moreButton-container">
+                                        <button type="button" onClick={moreDetails}>
+                                            More Details
+                                        </button>
+                                    </div>
+                                    <div className="editButton-container">
+                                        <button onClick={editBookPage}>
+                                            Edit
+                                        </button>
+                                        <button onClick={handleDelete}>
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                                {showMore ? (
+                                    <div className="moreDetails">
+                                        <p>
+                                            {book.description}
+                                        </p>
+                                        <p className="filmDetail">
+                                            <span>Adapted to Film: </span>
+                                            {book.filmAdaptatioin ? "Yes" : "No"}
+                                        </p>
+                                    </div>
+                                ) : (null) }
+                            </div>
+                        </div>
                     </div>
                 </>
             )}
