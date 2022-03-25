@@ -9,19 +9,19 @@ function Nav({ classState }) {
 					<Link to='/books'>
 						<li className='nav-link'>All Books</li>
 					</Link>
-					<Link to='/books/:genre'>
+					<Link to='/books/Fantasy'>
 						<li className='nav-link'>Fantasy</li>
 					</Link>
-					<Link to='/books/:genre'>
+					<Link to='/books/Mystery'>
 						<li className='nav-link'>Mystery</li>
 					</Link>
-					<Link to='/books/:genre'>
+					<Link to='/books/Romance'>
 						<li className='nav-link'>Romance</li>
 					</Link>
-					<Link to='/books/:genre'>
+					<Link to='/books/Education'>
 						<li className='nav-link'>Education</li>
 					</Link>
-					<Link to='/books/:genre'>
+					<Link to='/books/Thriller'>
 						<li className='nav-link'>Thriller</li>
 					</Link>
 				</ul>
