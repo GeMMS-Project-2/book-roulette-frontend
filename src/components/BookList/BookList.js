@@ -1,38 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 
-function BookList() {
-  const [booksArray, setBooksArray] = useState([]);
+import { useParams, useNavigate } from 'react-router-dom';
 
-  useEffect(() => {
-    fetch("https://book-roulette.herokuapp.com/books")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setBooksArray(data);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+export default function BookList() {
+	const [bookList, setBookList] = useState([]);
+	const { genre } = useParams();
+	useEffect(() => {
+		fetch(`https://book-roulette.herokuapp.com/books/genre/${genre}`)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				setBookList(data);
+			})
+			.catch((error) => {
+				console.log('error');
+			});
+	}, [genre]);
 
-  if (!booksArray.length) {
-    return <h2>Loading</h2>;
-  }
-
-  return (
-    <div>
-      {booksArray.map((book) => {
-        return (
-          <div>
-            <h1>{book.title}</h1>
-            <h3>{book.author}</h3>
-          </div>
-        );
-      })}
-    </div>
-  );
+	return (
+		<div key=''>
+			<div className='book-genre-container'>
+				{bookList &&
+					bookList.map((BookList) => (
+						<div key={BookList._id}>
+							<h2>
+								{BookList.title} - {BookList.author}
+							</h2>
+						</div>
+					))}
+			</div>
+		</div>
+	);
 }
-
-export default BookList;

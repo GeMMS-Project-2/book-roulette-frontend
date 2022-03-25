@@ -46,7 +46,7 @@ function App() {
 			<div>
 				<Routes>
 					<Route path='/list' element={<BookList />} />
-					<Route path='/books/list/:genre' element={<BookList />} />
+					<Route path='/books/:genre' element={<BookList />} />
 					<Route path='/add-book' element={<Form />} />
 					<Route path='/:genre' element={<Book />} />
 					<Route path='/' element={<Home />} />
