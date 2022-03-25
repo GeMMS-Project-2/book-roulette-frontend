@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import Romance from './components/Romance/Romance';
 
 function App() {
 	const [isActive, setIsActive] = useState(true);
@@ -50,6 +51,7 @@ function App() {
 					<Route path='/add-book' element={<Form />} />
 					<Route path='/:genre' element={<Book />} />
 					<Route path='/' element={<Home />} />
+					<Route path='/romanceIthink' element={<Romance />} />
 				</Routes>
 			</div>
 		</>
