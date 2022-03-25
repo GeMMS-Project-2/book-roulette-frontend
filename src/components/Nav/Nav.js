@@ -15,7 +15,7 @@ function Nav({ classState }) {
 					<Link to='/books/Mystery'>
 						<li className='nav-link'>Mystery</li>
 					</Link>
-					<Link to='/romanceIthink'>
+					<Link to='/books/Romance'>
 						<li className='nav-link'>Romance</li>
 					</Link>
 					<Link to='/books/Education'>
