@@ -48,7 +48,7 @@ function App() {
 					<Route path='/list' element={<BookList />} />
 					<Route path='/books/list/:genre' element={<BookList />} />
 					<Route path='/add-book' element={<Form />} />
-					<Route path='/:id' element={<Book />} />
+					<Route path='/:genre' element={<Book />} />
 					<Route path='/' element={<Home />} />
 				</Routes>
 			</div>
