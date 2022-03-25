@@ -41,6 +41,7 @@
     margin: 0.1rem 0;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
 }
 
 /* === Author Input === */
