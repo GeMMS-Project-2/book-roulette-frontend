@@ -19,12 +19,24 @@ export default function Home({ genre }) {
 				<form action='' onChange={handleSelect}>
 					<label htmlFor='selectGenre'>Pick a genre:</label>
 					<select name='selectGenre' id='selectGenre' className='drop-down'>
-						<option value=''>Select..</option>
-						<option value='Fantasy'>Fantasy</option>
-						<option value='Romance'>Romance</option>
-						<option value='Educational'>Educational</option>
-						<option value='Mystery'>Mystery</option>
-						<option value='Thriller'>Thriller</option>
+						<option value='' className='option'>
+							Select..
+						</option>
+						<option value='Fantasy' className='option'>
+							Fantasy
+						</option>
+						<option value='Romance' className='option'>
+							Romance
+						</option>
+						<option value='Educational' className='option'>
+							Educational
+						</option>
+						<option value='Mystery' className='option'>
+							Mystery
+						</option>
+						<option value='Thriller' className='option'>
+							Thriller
+						</option>
 					</select>
 				</form>
 				<img
