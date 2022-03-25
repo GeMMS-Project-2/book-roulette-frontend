@@ -80,6 +80,7 @@ function Book() {
 	};
 
     return (
+        <div className="allDetails-container">
         <section className="bookDetails-container">
             {modal ? (
                 <div className="modal-container">
@@ -131,7 +132,7 @@ function Book() {
                             <div className="edit-label">
                                 <label htmlFor="filmAdaptation">Adapted To Film?</label>
                             </div>
-                            <div className="edit-input">
+                            <div className="edit-input filmCheck">
                                 <input 
                                 type="checkbox"
                                 onChange={() => {
@@ -197,6 +198,7 @@ function Book() {
                 </>
             )}
         </section >
+        </div>
     );
 
   

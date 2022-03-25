@@ -1,4 +1,3 @@
-
 import './Home.css';
 import { useState } from 'react';
 import Book from '../Book/Book';
@@ -15,9 +14,9 @@ export default function Home({ genre }) {
 		<main id='main-content'>
 			<div id='roulette-container'>
 				<div>
-					<h2>Find Your Next Favorite Book</h2>
+					<h2 className='home-CTA'>Find Your Next Favorite Book</h2>
 				</div>
-				<form action='' onChange={handleSelect}>
+				<form action='' onChange={handleSelect} className='home-form'>
 					<label htmlFor='selectGenre'>Pick a genre:</label>
 					<select name='selectGenre' id='selectGenre' className='drop-down'>
 						<option value='' className='option'>
@@ -29,8 +28,8 @@ export default function Home({ genre }) {
 						<option value='Romance' className='option'>
 							Romance
 						</option>
-						<option value='Educational' className='option'>
-							Educational
+						<option value='Education' className='option'>
+							Education
 						</option>
 						<option value='Mystery' className='option'>
 							Mystery
@@ -39,18 +38,19 @@ export default function Home({ genre }) {
 							Thriller
 						</option>
 					</select>
+					<Link to={`/${searchGenre}`}>
+						<button id='roulette-button'>Find your next book</button>
+					</Link>
 				</form>
 				<img
 					src='https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80'
 					alt=''
 					id='roulette-img'
 				/>
-
-				<Link to={`/${searchGenre}`}>
-					<button id='roulette-button'>Find your next book</button>
-				</Link>
 			</div>
 		</main>
 	);
+
   }
   
+
